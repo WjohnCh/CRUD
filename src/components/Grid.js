@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
 
+
 const Table = styled.table`
   width: 100%;
   background-color: #fff;
@@ -107,6 +108,18 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
       </Tbody>
     </Table>
   );
+};
+
+Grid.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    nome: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    fone: PropTypes.string.isRequired,
+    data_nascimento: PropTypes.string,
+  })).isRequired,
+  setUsers: PropTypes.func.isRequired,
+  setOnEdit: PropTypes.func.isRequired,
 };
 
 export default Grid;

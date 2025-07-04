@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { toast } from "react-toastify";
+import PropTypes from 'prop-types';
+
 
 const FormContainer = styled.form`
   display: flex;
@@ -120,6 +122,18 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
       <Button type="submit">SALVAR</Button>
     </FormContainer>
   );
+};
+
+Form.propTypes = {
+  getUsers: PropTypes.func.isRequired,
+  onEdit: PropTypes.shape({
+    id: PropTypes.number,
+    nome: PropTypes.string,
+    email: PropTypes.string,
+    fone: PropTypes.string,
+    data_nascimento: PropTypes.string,
+  }),
+  setOnEdit: PropTypes.func.isRequired,
 };
 
 export default Form;
