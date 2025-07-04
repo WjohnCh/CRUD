@@ -1,1 +1,1 @@
-Implements Jenkins CI/CD
+Implements Jenkins in this project
