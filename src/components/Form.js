@@ -101,20 +101,20 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
   return (
     <FormContainer ref={ref} onSubmit={handleSubmit}>
       <InputArea>
-        <Label>Nome</Label>
-        <Input name="nome" />
+        <Label htmlFor="nome">Nome</Label>
+        <Input id="nome" name="nome" />
       </InputArea>
       <InputArea>
-        <Label>E-mail</Label>
-        <Input name="email" type="email" />
+        <Label htmlFor="email">E-mail</Label>
+        <Input id="email" name="email" type="email" />
       </InputArea>
       <InputArea>
-        <Label>Telefone</Label>
-        <Input name="fone" />
+        <Label htmlFor="fone">Telefone</Label>
+        <Input id="fone" name="fone" />
       </InputArea>
       <InputArea>
-        <Label>Data de Nascimento</Label>
-        <Input name="data_nascimento" type="date" />
+        <Label htmlFor="data_nascimento">Data de Nascimento</Label>
+        <Input id="data_nascimento" name="data_nascimento" type="date" />
       </InputArea>
 
       <Button type="submit">SALVAR</Button>

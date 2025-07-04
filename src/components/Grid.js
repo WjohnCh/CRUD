@@ -16,9 +16,7 @@ const Table = styled.table`
 `;
 
 export const Thead = styled.thead``;
-
 export const Tbody = styled.tbody``;
-
 export const Tr = styled.tr``;
 
 export const Th = styled.th`
@@ -51,7 +49,6 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
       .delete("http://localhost:8800/" + id)
       .then(({ data }) => {
         const newArray = users.filter((user) => user.id !== id);
-
         setUsers(newArray);
         toast.success(data);
       })
@@ -76,14 +73,34 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
           <Tr key={i}>
             <Td width="30%">{item.nome}</Td>
             <Td width="30%">{item.email}</Td>
-            <Td width="20%" onlyWeb>
-              {item.fone}
+            <Td width="20%" onlyWeb>{item.fone}</Td>
+            <Td alignCenter width="5%">
+              <button
+                aria-label="editar"
+                onClick={() => handleEdit(item)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                }}
+              >
+                <FaEdit />
+              </button>
             </Td>
             <Td alignCenter width="5%">
-              <FaEdit onClick={() => handleEdit(item)} />
-            </Td>
-            <Td alignCenter width="5%">
-              <FaTrash onClick={() => handleDelete(item.id)} />
+              <button
+                aria-label="deletar"
+                onClick={() => handleDelete(item.id)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                }}
+              >
+                <FaTrash />
+              </button>
             </Td>
           </Tr>
         ))}
